@@ -2,6 +2,8 @@ import asyncio
 import logging
 import sqlite3
 from datetime import datetime
+import CheckTime
+from TimeList import TimeList
 
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.utils.exceptions import BotBlocked
@@ -9,10 +11,6 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, \
     InlineKeyboardButton, InlineKeyboardMarkup
 
 from config import TOKEN
-
-def TimeListUpdate(index):
-
-
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -45,27 +43,34 @@ st7 = InlineKeyboardButton('Машиностроителей (7)', callback_data
 st8 = InlineKeyboardButton('Уралмаш (8)', callback_data='st8_click')
 st9 = InlineKeyboardButton('Проспект космонавтов (9)', callback_data='st9_click')
 
-station_buttons = InlineKeyboardMarkup()\
+station_buttons = InlineKeyboardMarkup() \
     .add(st1).add(st2).add(st3).add(st4).add(st5).add(st6).add(st7).add(st8).add(st9)
+
 
 @dp.callback_query_handler(lambda c: c.data == 'st1_click')
 async def process_callback_button(callback_query: types.CallbackQuery):
     await bot.answer_callback_query(callback_query.id)
     try:
-        await bot.send_message(callback_query.from_user.id, 'Ваше направление',
+        await bot.send_message(callback_query.from_user.id, f"В сторону {st2.text}\n\n"
+                                                            f"{CheckTime.CheckTime(TimeList.st1_B)}",
                                reply_markup=button_restart)
     except BotBlocked:
         await asyncio.sleep(0.1)
+
 
 @dp.callback_query_handler(lambda c: c.data == 'st2_click')
 async def process_callback_button(callback_query: types.CallbackQuery):
     await bot.answer_callback_query(callback_query.id)
     try:
-        await bot.send_message(callback_query.from_user.id, 'Ваше направление',
+        await bot.send_message(callback_query.from_user.id, f"В сторону {st1.text}\n\n"
+                                                            f"{CheckTime.CheckTime(TimeList.st2_B_in_B)}\n\n\n"
+                                                            f"В сторону {st3.text}\n\n"
+                                                            f"{CheckTime.CheckTime(TimeList.st2_B_in_P)}",
                                reply_markup=button_restart)
     except BotBlocked:
         await asyncio.sleep(0.1)
-        
+
+
 @dp.callback_query_handler(lambda c: c.data == 'st3_click')
 async def process_callback_button(callback_query: types.CallbackQuery):
     await bot.answer_callback_query(callback_query.id)
@@ -74,7 +79,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                reply_markup=button_restart)
     except BotBlocked:
         await asyncio.sleep(0.1)
-        
+
+
 @dp.callback_query_handler(lambda c: c.data == 'st4_click')
 async def process_callback_button(callback_query: types.CallbackQuery):
     await bot.answer_callback_query(callback_query.id)
@@ -83,7 +89,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                reply_markup=button_restart)
     except BotBlocked:
         await asyncio.sleep(0.1)
-        
+
+
 @dp.callback_query_handler(lambda c: c.data == 'st5_click')
 async def process_callback_button(callback_query: types.CallbackQuery):
     await bot.answer_callback_query(callback_query.id)
@@ -92,7 +99,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                reply_markup=button_restart)
     except BotBlocked:
         await asyncio.sleep(0.1)
-        
+
+
 @dp.callback_query_handler(lambda c: c.data == 'st6_click')
 async def process_callback_button(callback_query: types.CallbackQuery):
     await bot.answer_callback_query(callback_query.id)
@@ -101,7 +109,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                reply_markup=button_restart)
     except BotBlocked:
         await asyncio.sleep(0.1)
-        
+
+
 @dp.callback_query_handler(lambda c: c.data == 'st7_click')
 async def process_callback_button(callback_query: types.CallbackQuery):
     await bot.answer_callback_query(callback_query.id)
@@ -110,7 +119,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                reply_markup=button_restart)
     except BotBlocked:
         await asyncio.sleep(0.1)
-        
+
+
 @dp.callback_query_handler(lambda c: c.data == 'st8_click')
 async def process_callback_button(callback_query: types.CallbackQuery):
     await bot.answer_callback_query(callback_query.id)
@@ -119,7 +129,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                reply_markup=button_restart)
     except BotBlocked:
         await asyncio.sleep(0.1)
-        
+
+
 @dp.callback_query_handler(lambda c: c.data == 'st9_click')
 async def process_callback_button(callback_query: types.CallbackQuery):
     await bot.answer_callback_query(callback_query.id)
@@ -132,7 +143,7 @@ async def process_callback_button(callback_query: types.CallbackQuery):
 
 # @dp.message_handler(commands=['help'])
 # async def process_help_command(message: types.Message):
-#     await message.answer('Мои команды', reply_markup=help_comands)
+#     await message.answer('Мои команды', reply_markup=help_commands)
 
 
 @dp.message_handler(commands=['info'])
@@ -151,11 +162,11 @@ async def process_start_command(message: types.Message):
         reply_markup=station_buttons)
 
 
-@dp.message_handler()
-async def echo(message: types.Message):
-    if message.text == '':
-        await message.answer(TimeList(people_id),
-                             reply_markup=button_restart)
+# @dp.message_handler()
+# async def echo(message: types.Message):
+#     if message.text == '':
+#         await message.answer(TimeList(people_id),
+#                              reply_markup=button_restart)
 
 
 if __name__ == '__main__':
