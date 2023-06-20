@@ -63,9 +63,9 @@ async def process_callback_button(callback_query: types.CallbackQuery):
     await bot.answer_callback_query(callback_query.id)
     try:
         await bot.send_message(callback_query.from_user.id, f"В сторону {st1.text}\n\n"
-                                                            f"{CheckTime.CheckTime(TimeList.st2_B_in_B)}\n\n\n"
+                                                            f"{CheckTime.CheckTime(TimeList.st2_in_B)}\n\n\n"
                                                             f"В сторону {st3.text}\n\n"
-                                                            f"{CheckTime.CheckTime(TimeList.st2_B_in_P)}",
+                                                            f"{CheckTime.CheckTime(TimeList.st2_in_P)}",
                                reply_markup=button_restart)
     except BotBlocked:
         await asyncio.sleep(0.1)
