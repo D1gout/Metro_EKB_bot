@@ -340,7 +340,7 @@ async def process_start_command(message: types.Message):
         "Привет!",
         reply_markup=link_button)
     await message.answer(
-        "Я бот который скидывает расписание\n\nВыбери свою станцию",
+        "Выбери свою станцию",
         reply_markup=station_buttons)
 
 
