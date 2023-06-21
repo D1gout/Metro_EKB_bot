@@ -34,8 +34,6 @@ link_button = InlineKeyboardMarkup().add(InlineKeyboardButton(
     'Написать мне',
     url='https://t.me/Aweyout'))
 
-now_time = time.strftime("%H:%M")
-
 st1 = InlineKeyboardButton('Ботаническая (1)', callback_data='st1_click')
 st2 = InlineKeyboardButton('Чкаловская (2)', callback_data='st2_click')
 st3 = InlineKeyboardButton('Геологическая (3)', callback_data='st3_click')
@@ -87,7 +85,7 @@ async def process_callback_button(callback_query: types.CallbackQuery):
 
     try:
         await bot.edit_message_text(chat_id=callback_query.from_user.id, message_id=callback_query.message.message_id,
-                                    text=f"Обновлено в {now_time}\n\n"
+                                    text=f"Обновлено в {time.strftime("%H:%M")}\n\n"
                                          f"В сторону {st2.text}\n\n"
                                          f"{CheckTime.CheckTime(TimeList.st1_B)}",
                                     reply_markup=st1_button)
@@ -114,7 +112,7 @@ async def process_callback_button(callback_query: types.CallbackQuery):
 
     try:
         await bot.edit_message_text(chat_id=callback_query.from_user.id, message_id=callback_query.message.message_id,
-                                    text=f"Обновлено в {now_time}\n\n"
+                                    text=f"Обновлено в {time.strftime("%H:%M")}\n\n"
                                          f"В сторону {st1.text}\n\n"
                                          f"{CheckTime.CheckTime(TimeList.st2_in_B)}\n\n\n"
                                          f"В сторону {st3.text}\n\n"
@@ -143,7 +141,7 @@ async def process_callback_button(callback_query: types.CallbackQuery):
 
     try:
         await bot.edit_message_text(chat_id=callback_query.from_user.id, message_id=callback_query.message.message_id,
-                                    text=f"Обновлено в {now_time}\n\n"
+                                    text=f"Обновлено в {time.strftime("%H:%M")}\n\n"
                                          f"В сторону {st2.text}\n\n"
                                          f"{CheckTime.CheckTime(TimeList.st3_in_B)}\n\n\n"
                                          f"В сторону {st4.text}\n\n"
@@ -172,7 +170,7 @@ async def process_callback_button(callback_query: types.CallbackQuery):
 
     try:
         await bot.edit_message_text(chat_id=callback_query.from_user.id, message_id=callback_query.message.message_id,
-                                    text=f"Обновлено в {now_time}\n\n"
+                                    text=f"Обновлено в {time.strftime("%H:%M")}\n\n"
                                          f"В сторону {st3.text}\n\n"
                                          f"{CheckTime.CheckTime(TimeList.st4_in_B)}\n\n\n"
                                          f"В сторону {st5.text}\n\n"
@@ -201,7 +199,7 @@ async def process_callback_button(callback_query: types.CallbackQuery):
 
     try:
         await bot.edit_message_text(chat_id=callback_query.from_user.id, message_id=callback_query.message.message_id,
-                                    text=f"Обновлено в {now_time}\n\n"
+                                    text=f"Обновлено в {time.strftime("%H:%M")}\n\n"
                                          f"В сторону {st4.text}\n\n"
                                          f"{CheckTime.CheckTime(TimeList.st5_in_B)}\n\n\n"
                                          f"В сторону {st6.text}\n\n"
@@ -230,7 +228,7 @@ async def process_callback_button(callback_query: types.CallbackQuery):
 
     try:
         await bot.edit_message_text(chat_id=callback_query.from_user.id, message_id=callback_query.message.message_id,
-                                    text=f"Обновлено в {now_time}\n\n"
+                                    text=f"Обновлено в {time.strftime("%H:%M")}\n\n"
                                          f"В сторону {st5.text}\n\n"
                                          f"{CheckTime.CheckTime(TimeList.st6_in_B)}\n\n\n"
                                          f"В сторону {st7.text}\n\n"
@@ -259,7 +257,7 @@ async def process_callback_button(callback_query: types.CallbackQuery):
 
     try:
         await bot.edit_message_text(chat_id=callback_query.from_user.id, message_id=callback_query.message.message_id,
-                                    text=f"Обновлено в {now_time}\n\n"
+                                    text=f"Обновлено в {time.strftime("%H:%M")}\n\n"
                                          f"В сторону {st6.text}\n\n"
                                          f"{CheckTime.CheckTime(TimeList.st7_in_B)}\n\n\n"
                                          f"В сторону {st8.text}\n\n"
@@ -288,7 +286,7 @@ async def process_callback_button(callback_query: types.CallbackQuery):
 
     try:
         await bot.edit_message_text(chat_id=callback_query.from_user.id, message_id=callback_query.message.message_id,
-                                    text=f"Обновлено в {now_time}\n\n"
+                                    text=f"Обновлено в {time.strftime("%H:%M")}\n\n"
                                          f"В сторону {st7.text}\n\n"
                                          f"{CheckTime.CheckTime(TimeList.st8_in_B)}\n\n\n"
                                          f"В сторону {st9.text}\n\n"
@@ -315,7 +313,7 @@ async def process_callback_button(callback_query: types.CallbackQuery):
 
     try:
         await bot.edit_message_text(chat_id=callback_query.from_user.id, message_id=callback_query.message.message_id,
-                                    text=f"Обновлено в {now_time}\n\n"
+                                    text=f"Обновлено в {time.strftime("%H:%M")}\n\n"
                                          f"В сторону {st8.text}\n\n"
                                          f"{CheckTime.CheckTime(TimeList.st9_P)}",
                                     reply_markup=st9_button)
