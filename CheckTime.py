@@ -30,7 +30,6 @@ def CheckTime(station_time):
                 return f"Поезд прибыл\nСледующий через {next_time} мин."
 
         if hours_next == int(station_time[i].split(':')[0]):
-            print(station_time[i])
             time = 60 - minutes + int(station_time[i].split(':')[1])
             next_time = 60 - minutes + int(station_time[i + 1].split(':')[1])
             return f"Поезд прибудет через {time} мин.\nСледующий через {next_time} мин."
