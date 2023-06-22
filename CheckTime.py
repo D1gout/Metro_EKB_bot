@@ -4,7 +4,7 @@ from datetime import datetime
 def CheckTime(station_time):
     hours = datetime.now().hour
     hours_next = datetime.now().hour + 1
-    minutes = datetime.now().minute + 1
+    minutes = datetime.now().minute
 
     if hours_next == 24:
         hours_next = 0
