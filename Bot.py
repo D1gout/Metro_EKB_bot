@@ -1,8 +1,6 @@
 import asyncio
 import logging
-import sqlite3
 import time
-from datetime import datetime
 import CheckTime
 from TimeList import TimeList
 
