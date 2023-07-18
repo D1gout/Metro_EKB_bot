@@ -12,9 +12,11 @@ def CheckTime(station_time):
     if hours == 24:
         hours = 0
 
+    if hours > int(station_time[len(station_time) - 1].split(':')[0]) and \
+            minutes > int(station_time[len(station_time) - 1].split(':')[1]):
+        return "Метро закрыто"
+
     for i in range(len(station_time)):
-        if hours > int(station_time[len(station_time)].split(':')[0]):
-            return "Метро закрыто"
 
         if hours == int(station_time[i].split(':')[0]):
 

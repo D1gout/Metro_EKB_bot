@@ -1,3 +1,3 @@
 # Токен, ID создателя
-TOKEN = 'YOUR_TOKEN_HERE'
+TOKEN = '6045816972:AAEfMQUHAasdEsMQe0l8W5wUZVi9uahvgrc'
 MY_ID = '706967790'
