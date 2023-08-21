@@ -16,7 +16,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
         await ParamList.bot.send_message(callback_query.from_user.id, f"В сторону {ParamList.st2.text}\n\n"
                                                                       f"{CheckTime.CheckTime(TimeList.st1_B)}",
                                          reply_markup=ParamList.st1_button)
-    except BotBlocked:
+    except BotBlocked as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -31,7 +32,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                    f"В сторону {ParamList.st2.text}\n\n"
                                                    f"{CheckTime.CheckTime(TimeList.st1_B)}",
                                               reply_markup=ParamList.st1_button)
-    except MessageNotModified:
+    except MessageNotModified as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -44,7 +46,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                                       f"В сторону {ParamList.st3.text}\n\n"
                                                                       f"{CheckTime.CheckTime(TimeList.st2_in_P)}",
                                          reply_markup=ParamList.st2_button)
-    except BotBlocked:
+    except BotBlocked as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -61,7 +64,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                    f"В сторону {ParamList.st3.text}\n\n"
                                                    f"{CheckTime.CheckTime(TimeList.st2_in_P)}",
                                               reply_markup=ParamList.st2_button)
-    except MessageNotModified:
+    except MessageNotModified as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -74,7 +78,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                                       f"В сторону {ParamList.st4.text}\n\n"
                                                                       f"{CheckTime.CheckTime(TimeList.st3_in_P)}",
                                          reply_markup=ParamList.st3_button)
-    except BotBlocked:
+    except BotBlocked as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -91,7 +96,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                    f"В сторону {ParamList.st4.text}\n\n"
                                                    f"{CheckTime.CheckTime(TimeList.st3_in_P)}",
                                               reply_markup=ParamList.st3_button)
-    except MessageNotModified:
+    except MessageNotModified as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -104,7 +110,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                                       f"В сторону {ParamList.st5.text}\n\n"
                                                                       f"{CheckTime.CheckTime(TimeList.st4_in_P)}",
                                          reply_markup=ParamList.st4_button)
-    except BotBlocked:
+    except BotBlocked as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -121,7 +128,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                    f"В сторону {ParamList.st5.text}\n\n"
                                                    f"{CheckTime.CheckTime(TimeList.st4_in_P)}",
                                               reply_markup=ParamList.st4_button)
-    except MessageNotModified:
+    except MessageNotModified as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -134,7 +142,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                                       f"В сторону {ParamList.st6.text}\n\n"
                                                                       f"{CheckTime.CheckTime(TimeList.st5_in_P)}",
                                          reply_markup=ParamList.st5_button)
-    except BotBlocked:
+    except BotBlocked as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -151,7 +160,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                    f"В сторону {ParamList.st6.text}\n\n"
                                                    f"{CheckTime.CheckTime(TimeList.st5_in_P)}",
                                               reply_markup=ParamList.st5_button)
-    except MessageNotModified:
+    except MessageNotModified as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -164,7 +174,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                                       f"В сторону {ParamList.st7.text}\n\n"
                                                                       f"{CheckTime.CheckTime(TimeList.st6_in_P)}",
                                          reply_markup=ParamList.st6_button)
-    except BotBlocked:
+    except BotBlocked as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -181,7 +192,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                    f"В сторону {ParamList.st7.text}\n\n"
                                                    f"{CheckTime.CheckTime(TimeList.st6_in_P)}",
                                               reply_markup=ParamList.st6_button)
-    except MessageNotModified:
+    except MessageNotModified as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -194,7 +206,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                                       f"В сторону {ParamList.st8.text}\n\n"
                                                                       f"{CheckTime.CheckTime(TimeList.st7_in_P)}",
                                          reply_markup=ParamList.st7_button)
-    except BotBlocked:
+    except BotBlocked as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -211,7 +224,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                    f"В сторону {ParamList.st8.text}\n\n"
                                                    f"{CheckTime.CheckTime(TimeList.st7_in_P)}",
                                               reply_markup=ParamList.st7_button)
-    except MessageNotModified:
+    except MessageNotModified as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -224,7 +238,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                                       f"В сторону {ParamList.st9.text}\n\n"
                                                                       f"{CheckTime.CheckTime(TimeList.st8_in_P)}",
                                          reply_markup=ParamList.st8_button)
-    except BotBlocked:
+    except BotBlocked as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -241,7 +256,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                    f"В сторону {ParamList.st9.text}\n\n"
                                                    f"{CheckTime.CheckTime(TimeList.st8_in_P)}",
                                               reply_markup=ParamList.st8_button)
-    except MessageNotModified:
+    except MessageNotModified as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -252,7 +268,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
         await ParamList.bot.send_message(callback_query.from_user.id, f"В сторону {ParamList.st8.text}\n\n"
                                                                       f"{CheckTime.CheckTime(TimeList.st9_P)}",
                                          reply_markup=ParamList.st9_button)
-    except BotBlocked:
+    except BotBlocked as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 
@@ -267,7 +284,8 @@ async def process_callback_button(callback_query: types.CallbackQuery):
                                                    f"В сторону {ParamList.st8.text}\n\n"
                                                    f"{CheckTime.CheckTime(TimeList.st9_P)}",
                                               reply_markup=ParamList.st9_button)
-    except MessageNotModified:
+    except MessageNotModified as error:
+        print(error)
         await asyncio.sleep(0.1)
 
 

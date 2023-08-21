@@ -33,6 +33,3 @@ def Parse_Time(station: int, direction: int):
     text = re.sub(r':\d{4}', '', text)
 
     return text
-
-
-print(Parse_Time(5, 0))
