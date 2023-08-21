@@ -1,8 +1,9 @@
 import requests as requests
+import re
 from bs4 import BeautifulSoup
 
 
-def Parse_Time(station: int):
+def Parse_Time(station: int, direction: int):
     __IP = 'https://metro-ektb.ru/podrobnyy-grafik-'
 
     station_list = ['0',
@@ -24,4 +25,14 @@ def Parse_Time(station: int):
 
     times = soup.find('div', class_="uss_catalog_content").find_all('li')
 
-    return times
+    split_string = times[direction].text.replace(',', '')
+
+    # split_string.re.split(r'\d{3}', '').split(';')
+
+    text = re.sub(r'\s+|$', '', split_string)
+    text = re.sub(r':\d{4}', '', text)
+
+    return text
+
+
+print(Parse_Time(5, 0))
