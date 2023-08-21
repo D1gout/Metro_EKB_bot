@@ -28,6 +28,6 @@ def Parse_Time(station: int, direction: int):
     split_string = times[direction].text.replace(',', '')
 
     text = re.sub(r'\s+|$', '', split_string)
-    text = re.sub(r':\d{4}', '', text)
+    text = re.sub(r':\d{4}', '', text).split(';')
 
     return text
