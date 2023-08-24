@@ -1,7 +1,5 @@
 from datetime import datetime
 
-from TimeList import TimeList
-
 
 def CheckTime(station_time):
     hours = datetime.now().hour
@@ -19,6 +17,8 @@ def CheckTime(station_time):
         return "Метро закрыто"
 
     for i in range(len(station_time)):
+
+        print(int(station_time[i].split(':')[1]))
 
         if hours == int(station_time[i].split(':')[0]):
 
